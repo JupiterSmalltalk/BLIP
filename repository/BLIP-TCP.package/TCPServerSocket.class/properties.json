@@ -1,0 +1,15 @@
+{
+	"category" : "BLIP-TCP",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"securityBlock",
+		"serviceBlock" ],
+	"name" : "TCPServerSocket",
+	"pools" : [
+		 ],
+	"super" : "TCPClientSocket",
+	"type" : "normal" }

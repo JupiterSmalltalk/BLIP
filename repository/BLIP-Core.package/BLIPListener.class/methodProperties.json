@@ -1,0 +1,19 @@
+{
+	"class" : {
+		"current" : "jupiter 4/23/2011 05:52",
+		"defaultPort" : "jupiter 4/23/2011 05:53",
+		"log:" : "jupiter 4/23/2011 05:53",
+		"logError:" : "jupiter 4/23/2011 05:54",
+		"logError:heading:" : "jupiter 4/23/2011 05:54",
+		"start" : "jupiter 4/23/2011 05:54",
+		"startOnPort:" : "jupiter 4/23/2011 05:54",
+		"startOnPort:address:" : "jupiter 4/23/2011 05:54",
+		"stop" : "jupiter 4/23/2011 05:54" },
+	"instance" : {
+		"connectionClass" : "jupiter 4/23/2011 05:55",
+		"defaultDirectory" : "jupiter 06/28/2016 15:28",
+		"initialize" : "jupiter 4/23/2011 05:56",
+		"installInSessionState" : "jupiter 4/23/2011 05:58",
+		"removeFromSessionState" : "jupiter 4/23/2011 05:59",
+		"start" : "jupiter 4/23/2011 05:59",
+		"stop" : "jupiter 4/23/2011 06:00" } }

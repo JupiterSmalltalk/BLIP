@@ -1,0 +1,28 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"addProperties:" : "jupiter 4/23/2011 06:01",
+		"addToBody:" : "jupiter 4/23/2011 06:01",
+		"assignedNumber:" : "jupiter 4/23/2011 06:01",
+		"body:" : "jupiter 4/23/2011 06:01",
+		"bodyString" : "jupiter 4/23/2011 06:01",
+		"bodyString:" : "jupiter 4/23/2011 06:01",
+		"compressed" : "jupiter 4/23/2011 06:02",
+		"connectionClosed" : "jupiter 4/23/2011 06:02",
+		"encode" : "jupiter 4/23/2011 06:02",
+		"flags" : "jupiter 4/23/2011 06:02",
+		"initWithConnection:isMine:flags:number:body:" : "jupiter 4/23/2011 06:07",
+		"initialize" : "jupiter 4/23/2011 06:03",
+		"isMine" : "jupiter 4/23/2011 06:04",
+		"number" : "jupiter 4/23/2011 06:04",
+		"printOn:" : "jupiter 4/23/2011 06:04",
+		"profile" : "jupiter 4/23/2011 06:04",
+		"profile:" : "jupiter 4/23/2011 06:04",
+		"propertyAt:" : "jupiter 4/23/2011 06:04",
+		"propertyAt:put:" : "jupiter 4/23/2011 06:04",
+		"receivedFrameWithHeader:body:" : "jupiter 4/23/2011 06:05",
+		"setCompressed" : "jupiter 4/23/2011 06:06",
+		"urgent" : "jupiter 4/23/2011 06:06",
+		"urgent:" : "jupiter 4/23/2011 06:06",
+		"writeFrameTo:maxSize:" : "jupiter 4/23/2011 06:08" } }

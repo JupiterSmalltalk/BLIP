@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BLIPPackedProperties",
+	"pools" : [
+		 ],
+	"super" : "ByteArray",
+	"type" : "bytes" }

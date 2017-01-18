@@ -1,0 +1,15 @@
+{
+	"category" : "BLIP-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"dispatcher",
+		"blipClosing" ],
+	"name" : "BLIPConnection",
+	"pools" : [
+		 ],
+	"super" : "TCPConnection",
+	"type" : "normal" }

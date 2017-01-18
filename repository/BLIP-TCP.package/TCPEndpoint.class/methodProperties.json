@@ -1,0 +1,11 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"delegate" : "jupiter 2/2/2011 08:32",
+		"delegate:" : "jupiter 2/2/2011 08:32",
+		"handleEvent:" : "jupiter 2/2/2011 08:32",
+		"initialize" : "jupiter 2/2/2011 08:33",
+		"isOpen" : "jupiter 2/2/2011 08:33",
+		"socket" : "jupiter 2/2/2011 08:33",
+		"verbose" : "jupiter 2/2/2011 08:33" } }

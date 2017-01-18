@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-TCP",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "TCPEventQueue",
+	"pools" : [
+		 ],
+	"super" : "SharedQueue",
+	"type" : "normal" }

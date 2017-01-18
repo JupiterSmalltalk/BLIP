@@ -1,0 +1,13 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"addPendingResponse:" : "jupiter 4/23/2011 06:32",
+		"canRead" : "jupiter 4/23/2011 06:32",
+		"currentHeader" : "jupiter 4/23/2011 06:32",
+		"endCurrentFrame" : "jupiter 4/23/2011 06:33",
+		"errorWithFrameHeader:body:" : "jupiter 4/23/2011 06:33",
+		"initialize" : "jupiter 4/23/2011 06:33",
+		"receivedFrameWithHeader:body:" : "jupiter 4/23/2011 06:34",
+		"requestWithFrameHeader:body:" : "jupiter 4/23/2011 06:35",
+		"validateFrameHeader" : "jupiter 4/23/2011 06:35" } }

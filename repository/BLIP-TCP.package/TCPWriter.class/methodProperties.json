@@ -1,0 +1,10 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"canWrite" : "jupiter 2/2/2011 09:11",
+		"initialize" : "jupiter 2/2/2011 09:11",
+		"isBusy" : "jupiter 2/2/2011 09:11",
+		"queueIsEmpty" : "jupiter 2/2/2011 09:11",
+		"reader" : "jupiter 2/2/2011 09:11",
+		"writeData:" : "jupiter 2/2/2011 09:11" } }

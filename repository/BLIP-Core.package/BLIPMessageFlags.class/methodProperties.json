@@ -1,0 +1,22 @@
+{
+	"class" : {
+		"withFlags:" : "jupiter 4/23/2011 06:22" },
+	"instance" : {
+		"compressed" : "jupiter 4/23/2011 06:23",
+		"compressed:" : "jupiter 4/23/2011 06:23",
+		"flag:enabled:" : "jupiter 4/23/2011 06:23",
+		"flags" : "jupiter 4/23/2011 06:23",
+		"flags:" : "jupiter 4/23/2011 06:23",
+		"initialize" : "jupiter 4/23/2011 06:24",
+		"messageType" : "jupiter 4/23/2011 06:24",
+		"messageType:" : "jupiter 4/23/2011 06:25",
+		"messageTypeSymbol" : "jupiter 4/23/2011 06:25",
+		"meta" : "jupiter 4/23/2011 06:25",
+		"meta:" : "jupiter 4/23/2011 06:26",
+		"moreComing" : "jupiter 4/23/2011 06:26",
+		"moreComing:" : "jupiter 4/23/2011 06:26",
+		"noReply" : "jupiter 4/23/2011 06:27",
+		"noReply:" : "jupiter 4/23/2011 06:27",
+		"printOn:" : "jupiter 4/23/2011 06:27",
+		"urgent" : "jupiter 4/23/2011 06:28",
+		"urgent:" : "jupiter 4/23/2011 06:28" } }

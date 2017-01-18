@@ -1,0 +1,27 @@
+{
+	"category" : "BLIP-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"connection",
+		"flags",
+		"number",
+		"properties",
+		"body",
+		"encodedBody",
+		"mutableBody",
+		"isMine",
+		"isMutable",
+		"sent",
+		"propertiesAvailable",
+		"complete",
+		"bytesWritten",
+		"representedObject" ],
+	"name" : "BLIPMessage",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

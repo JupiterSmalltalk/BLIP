@@ -1,0 +1,12 @@
+{
+	"class" : {
+		"fromBytes:" : "jupiter 4/23/2011 06:29",
+		"withProperties:" : "jupiter 4/23/2011 06:29" },
+	"instance" : {
+		"asProperties" : "jupiter 4/23/2011 06:30",
+		"fromBytes:" : "jupiter 4/23/2011 06:30",
+		"length" : "jupiter 4/23/2011 06:30",
+		"nextPutCString:" : "jupiter 4/23/2011 06:30",
+		"properties:" : "jupiter 4/23/2011 06:30",
+		"readCStringInto:startingAt:" : "jupiter 4/23/2011 06:31",
+		"setLength" : "jupiter 4/23/2011 06:31" } }

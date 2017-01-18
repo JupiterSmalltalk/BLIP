@@ -1,0 +1,16 @@
+{
+	"category" : "BLIP-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"parent",
+		"predicates",
+		"targets" ],
+	"name" : "BLIPDispatcher",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

@@ -1,0 +1,16 @@
+{
+	"category" : "BLIP-TCP",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"socket",
+		"delegate",
+		"verbose" ],
+	"name" : "TCPEndpoint",
+	"pools" : [
+		 ],
+	"super" : "GRObject",
+	"type" : "normal" }

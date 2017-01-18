@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-TCP",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"objects" ],
+	"name" : "TCPTimeoutEvent",
+	"pools" : [
+		 ],
+	"super" : "GRObject",
+	"type" : "normal" }

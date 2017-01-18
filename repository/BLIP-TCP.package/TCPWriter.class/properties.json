@@ -1,0 +1,16 @@
+{
+	"category" : "BLIP-TCP",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"queue",
+		"currentData",
+		"currentDataPosition" ],
+	"name" : "TCPWriter",
+	"pools" : [
+		 ],
+	"super" : "TCPStream",
+	"type" : "normal" }

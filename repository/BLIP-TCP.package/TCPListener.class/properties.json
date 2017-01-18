@@ -1,0 +1,21 @@
+{
+	"category" : "BLIP-TCP",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"port",
+		"address",
+		"connections",
+		"eventQueue",
+		"timeoutEvent",
+		"eventLoopIsOn",
+		"isLogging",
+		"logFile" ],
+	"name" : "TCPListener",
+	"pools" : [
+		 ],
+	"super" : "TCPEndpoint",
+	"type" : "normal" }

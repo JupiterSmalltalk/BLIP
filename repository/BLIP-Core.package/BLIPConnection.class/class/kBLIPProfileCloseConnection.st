@@ -1,0 +1,4 @@
+constants-protocol
+kBLIPProfileCloseConnection
+
+	^'Close'

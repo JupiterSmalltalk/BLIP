@@ -1,0 +1,19 @@
+{
+	"category" : "BLIP-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"currentHeader",
+		"currentBytesRead",
+		"currentBody",
+		"numRequestsReceived",
+		"pendingRequests",
+		"pendingResponses" ],
+	"name" : "BLIPReader",
+	"pools" : [
+		 ],
+	"super" : "TCPReader",
+	"type" : "normal" }

@@ -1,0 +1,22 @@
+{
+	"category" : "BLIP-TCP",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"server",
+		"address",
+		"port",
+		"isIncoming",
+		"status",
+		"reader",
+		"writer",
+		"error",
+		"openTimeout" ],
+	"name" : "TCPConnection",
+	"pools" : [
+		 ],
+	"super" : "TCPEndpoint",
+	"type" : "normal" }

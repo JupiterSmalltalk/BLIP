@@ -1,0 +1,15 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"anyPeerSecurityBlock" : "jupiter 2/1/2011 23:03",
+		"defaultSecurityBlock" : "jupiter 2/1/2011 23:03",
+		"defaultServiceBlock" : "jupiter 2/1/2011 23:04",
+		"establishService:" : "jupiter 2/1/2011 23:06",
+		"handleEvent" : "jupiter 2/1/2011 23:07",
+		"isSecureEnough:" : "jupiter 2/1/2011 23:07",
+		"noPeerSecurityBlock" : "jupiter 2/1/2011 23:07",
+		"securityBlock" : "jupiter 2/1/2011 23:07",
+		"securityViolation:" : "jupiter 2/1/2011 23:07",
+		"serviceBlock" : "jupiter 2/1/2011 23:07",
+		"speciesForAccept" : "jupiter 2/1/2011 23:08" } }

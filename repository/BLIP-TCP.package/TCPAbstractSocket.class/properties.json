@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-TCP",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"tcpEndpoint" ],
+	"name" : "TCPAbstractSocket",
+	"pools" : [
+		 ],
+	"super" : "SpSocket",
+	"type" : "normal" }

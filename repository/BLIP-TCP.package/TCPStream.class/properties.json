@@ -1,0 +1,16 @@
+{
+	"category" : "BLIP-TCP",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"connection",
+		"stream",
+		"shouldClose" ],
+	"name" : "TCPStream",
+	"pools" : [
+		 ],
+	"super" : "GRObject",
+	"type" : "normal" }

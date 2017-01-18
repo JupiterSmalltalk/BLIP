@@ -1,0 +1,15 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"close" : "jupiter 2/2/2011 09:08",
+		"disconnect" : "jupiter 2/2/2011 09:08",
+		"initWithConnection:stream:" : "jupiter 2/2/2011 09:09",
+		"initialize" : "jupiter 2/2/2011 09:08",
+		"isActive" : "jupiter 2/2/2011 09:09",
+		"isBusy" : "jupiter 2/2/2011 09:09",
+		"open" : "jupiter 2/2/2011 09:09",
+		"opened" : "jupiter 2/2/2011 09:09",
+		"stream:" : "jupiter 2/2/2011 09:09",
+		"unclose" : "jupiter 2/2/2011 09:09",
+		"writer" : "jupiter 2/2/2011 09:09" } }

@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"response" ],
+	"name" : "BLIPRequest",
+	"pools" : [
+		 ],
+	"super" : "BLIPMessage",
+	"type" : "normal" }

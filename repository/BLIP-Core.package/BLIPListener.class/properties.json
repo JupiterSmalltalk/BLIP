@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"dispatcher" ],
+	"name" : "BLIPListener",
+	"pools" : [
+		 ],
+	"super" : "TCPListener",
+	"type" : "normal" }

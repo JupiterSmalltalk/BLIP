@@ -1,1 +1,1 @@
-(name 'BaselineOfBLIP-jupiter.1' message 'initial commit' id 'b4713fe3-2384-43e2-9e74-325e17f94928' date '01/18/2017' time '14:31:16' author 'jupiter' ancestors () stepChildren ())
+(name 'BaselineOfBLIP-jupiter.2' message 'Export base classes from GemStone/S' id 'de04c66d-a218-4fc9-85b5-b4921f8fc58e' date '01/18/2017' time '14:50:06' author 'jupiter' ancestors ((name 'BaselineOfBLIP-jupiter.1' message 'initial commit' id 'b4713fe3-2384-43e2-9e74-325e17f94928' date '01/18/2017' time '14:31:16' author 'jupiter' ancestors () stepChildren ())) stepChildren ())
