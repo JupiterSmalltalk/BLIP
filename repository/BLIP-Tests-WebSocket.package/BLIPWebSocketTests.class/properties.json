@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-Tests-WebSocket",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BLIPWebSocketTests",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

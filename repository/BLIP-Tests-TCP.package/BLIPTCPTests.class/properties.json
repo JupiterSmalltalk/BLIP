@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-Tests-TCP",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BLIPTCPTests",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

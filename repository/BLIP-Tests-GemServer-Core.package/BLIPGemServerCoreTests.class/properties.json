@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-Tests-GemServer-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BLIPGemServerCoreTests",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

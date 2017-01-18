@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-Tests-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BLIPCoreTests",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-Tests-GemServer-WebSocket",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BLIPGemServerWebSocketTests",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }
