@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-WebSocket",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BLIPWebSocketListener",
+	"pools" : [
+		 ],
+	"super" : "BLIPListener",
+	"type" : "normal" }
