@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-GemServer-WebSocket",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "jupiter 01/18/2017 15:10",
+	"instvars" : [
+		 ],
+	"name" : "BLIPWebSocketGemServer",
+	"pools" : [
+		 ],
+	"super" : "BLIPAbstractGemServer",
+	"type" : "normal" }

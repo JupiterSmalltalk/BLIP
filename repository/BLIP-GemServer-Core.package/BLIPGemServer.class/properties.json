@@ -1,0 +1,14 @@
+{
+	"category" : "BLIP-GemServer-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BLIPGemServer",
+	"pools" : [
+		 ],
+	"super" : "BLIPAbstractGemServer",
+	"type" : "normal" }

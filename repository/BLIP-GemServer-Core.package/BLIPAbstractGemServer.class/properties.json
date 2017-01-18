@@ -1,0 +1,17 @@
+{
+	"category" : "BLIP-GemServer-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "jupiter 01/18/2017 15:08",
+	"instvars" : [
+		"log",
+		"logListener",
+		"logFilter",
+		"options" ],
+	"name" : "BLIPAbstractGemServer",
+	"pools" : [
+		 ],
+	"super" : "GemServer",
+	"type" : "normal" }
