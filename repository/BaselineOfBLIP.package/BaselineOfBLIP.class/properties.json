@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfBLIP",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfBLIP",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }
