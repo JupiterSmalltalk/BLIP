@@ -1,0 +1,156 @@
+TDScriptLeafNode{#name:'blipServer',#contents:'[ :topez :objIn :tokens :command :commandNode | 
+  | opts args cmd |
+  \"for help: ./seasideWebServer -h\"
+  cmd := command command.
+  command
+    getOptsMixedLongShort:
+      {#(\'help\' $h #\'none\').
+      #(\'debug\' nil #\'required\').
+      #(\'breakpoints\' nil #\'required\').
+      #(\'errorHandler\' nil #\'required\').
+      #(\'register\' nil #\'required\').
+      #(\'port\' nil #\'required\').
+      #(\'start\' nil #\'none\').
+      #(\'stop\' nil #\'none\').
+      #(\'restart\' nil #\'none\')}
+    optionsAndArguments: [ :options :operands | 
+      opts := options.
+      args := operands ].
+  opts
+    at: \'help\'
+    ifAbsent: [ 
+      | handled |
+      handled := false.
+      opts
+        at: \'breakpoints\'
+        ifPresent: [ :breakOption | 
+          breakOption = \'set\'
+            ifTrue: [ WABasicDevelopment setBreakPoints ]
+            ifFalse: [ 
+              breakOption = \'clear\'
+                ifTrue: [ WABasicDevelopment clearBreakPoints ]
+                ifFalse: [ self error: \'Unknown breakpoints option \' , breakOption printString ] ].
+          handled := true ].
+      opts
+        at: \'errorHandler\'
+        ifPresent: [ :handler | 
+          | errorHandlerClass dps |
+          errorHandlerClass := Smalltalk at: handler asSymbol.
+          WAAdmin applicationExceptionHandlingDefaults
+            at: #\'exceptionHandler\'
+            put: errorHandlerClass.
+          dps := OrderedCollection with: WADispatcher default.
+          [ dps isEmpty ]
+            whileFalse: [ 
+              | dp |
+              dp := dps removeFirst.
+              dp isApplication
+                ifTrue: [ 
+                  | exceptionFilter |
+                  exceptionFilter := dp filters
+                    detect: [ :each | each isExceptionFilter ]
+                    ifNone: [ nil ].
+                  exceptionFilter
+                    ifNotNil: [ 
+                      | attribute |
+                      attribute := exceptionFilter configuration
+                        attributeAt: #\'exceptionHandler\'.
+                      exceptionFilter configuration
+                        takeValue: errorHandlerClass
+                        forAttribute: attribute ] ]
+                ifFalse: [ 
+                  dp isDispatcher
+                    ifTrue: [ dps addAll: dp handlers ] ] ].
+          handled := true ].
+      opts
+        at: \'register\'
+        ifPresent: [ :serverType | 
+          | serverClass ports |
+          serverType = \'zinc\'
+            ifTrue: [ serverClass := Smalltalk at: #\'WAGsZincAdaptor\' ]
+            ifFalse: [ 
+              serverType = \'zincstreaming\'
+                ifTrue: [ serverClass := Smalltalk at: #\'WAGsZincStreamingServerAdaptor\' ]
+                ifFalse: [ 
+                  serverType = \'fastcgi\'
+                    ifTrue: [ serverClass := Smalltalk at: #\'WAFastCGIAdaptor\' ]
+                    ifFalse: [ 
+                      serverType = \'swazoo\'
+                        ifTrue: [ serverClass := Smalltalk at: #\'WAGsSwazooAdaptor\' ] ] ] ].
+          serverClass
+            ifNil: [ nil error: \'No serverClass defined for service \' , serverType printString ].
+          opts
+            at: \'port\'
+            ifPresent: [ :port | ports := {(port asNumber)} ]
+            ifAbsent: [ ports := #(8383) ].
+          WAGemStoneRunSeasideGems default
+            name: serverType;
+            adaptorClass: serverClass;
+            ports: ports.
+          handled := true ].
+      opts
+        at: \'start\'
+        ifPresent: [ :ignored | WAGemStoneRunSeasideGems startGems ]
+        ifAbsent: [ 
+          opts
+            at: \'restart\'
+            ifPresent: [ :ignored | WAGemStoneRunSeasideGems restartGems ]
+            ifAbsent: [ 
+              opts
+                at: \'stop\'
+                ifPresent: [ :ignored | WAGemStoneRunSeasideGems stopGems ]
+                ifAbsent: [ 
+                  opts
+                    at: \'debug\'
+                    ifPresent: [ :debugPort | 
+                      WAGemStoneRunSeasideGems default adaptorClass
+                        stop;
+                        startOn: debugPort asNumber ]
+                    ifAbsent: [ 
+                      handled
+                        ifFalse: [ nil error: \'No action (start/stop/restart) specified\' ] ] ] ] ] ]
+    ifPresent: [ :ignored | 
+      TDManPage
+        viewManPage:
+          \'NAME
+  seasideWebServer - start/stop/restart seaside web servers
+SYNOPSIS
+  blipServer [-h|--help] [--register=blip|websocket] [--port=<port-number>]
+  blipServer [--start] [--stop] [--restart]
+  blipServer [--debug=<port-number>]
+  blipServer [--errorHandler=WARemoteDebuggingWalkbackErrorHandler|WAGemStoneProductionErrorHandler]
+  blipServer [--breakpoints=set|clear]
+
+
+DESCRIPTION
+  First register the type of BLIP server that you want to use along with a port
+  number (multiple port numbers not supported ...yet).
+
+  Then start/start/stop the BLIP server as desired.
+
+  --debug starts the BLIP server on the given port in the current gem instead of 
+  a separate gem.
+
+  --errorHandler resets the class of default error handler and changes handler for
+  all installed applications
+
+  --breakpoints sets or clears useful BLIP breakpoints.
+
+EXAMPLES
+  ./blipServer --help
+  ./blipServer --register=blip --port=20302 --start
+  ./blipServer --register=websocket --port=8080 --start
+
+  ./blipServer --restart
+  ./blipServer --start
+  ./blipServer --stop
+
+  ./blipServer --debug=8181
+
+  ./blipServer --breakpoints=set
+  ./blipServer --breakpoints=clear
+
+  ./blipServer --errorHandler=WARemoteDebuggingWalkbackErrorHandler
+  ./blipServer --errorHandler=WAGemStoneProductionErrorHandler
+\'
+        topez: topez ] ]',#creationTime:DateAndTime['2014-06-19T10:09:47.03463697433472-07:00'],#modificationTime:DateAndTime['2017-01-08T16:42:23.08956599235535-08:00']}

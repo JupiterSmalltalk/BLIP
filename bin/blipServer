@@ -1,0 +1,44 @@
+#! /bin/bash
+#=========================================================================
+# Copyright (c) 2016 MyNation.Earth <jupiter@mynation.earth>.
+#=========================================================================
+
+usage() {
+  cat <<HELP
+USAGE: $(basename $0) [-h] <stone-name> [--help] [--register=blip|websocket] [--port=<port-number>] \
+                      [--start] [--stop] [--restart]
+Register/start/stop/restart a BLIP server for GemStone/S.
+
+OPTIONS
+  -h show shell script usage
+  --help                         show BLIP server tODE script help
+  --register=blip|websocket      choose type of BLIP server to register.
+  --port=<port-number>           define BLIP port. Defaults to port 20302 for blip and port 80 for websocket
+  --start                        start the registered BLIP server
+  --stop                         stop the registered BLIP server
+  --restart                      restart the registered BLIP server
+
+EXAMPLES
+  $(basename $0) -h
+  $(basename $0) blipServer --register=blip --port=20302
+  $(basename $0) blipServer --register=websocket --port=80
+  $(basename $0) blipServer --restart
+  $(basename $0) blipServer --stop
+
+HELP
+}
+
+set -e # exit on error
+if [ "${GS_HOME}x" = "x" ] ; then
+  echo "the GS_HOME environment variable needs to be defined"; exit 1
+fi
+source ${GS_HOME}/bin/private/shFunctions
+
+getOpts_help $@ #parse standard (-h) options
+
+stoneName="$1"
+shift
+
+$GS_HOME/bin/devKitCommandLine todeIt $stoneName << EOF
+/home/blip/blipServer $*
+EOF

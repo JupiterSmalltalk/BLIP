@@ -1,3 +1,0 @@
-server compat
-scheme
-	^ #http

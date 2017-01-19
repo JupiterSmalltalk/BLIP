@@ -1,6 +1,5 @@
 as yet unclassified
 anyPeerSecurityBlock
-    "Answer a one argument Block that given a connected GsSocket will
-    answer true for any peer around the Internet."
+  "Allow connections from any host"
 
-    ^[ :connection | true]
+  ^ [ :connection | true ]

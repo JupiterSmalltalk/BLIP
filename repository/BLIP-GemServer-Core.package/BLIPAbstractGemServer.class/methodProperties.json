@@ -2,8 +2,6 @@
 	"class" : {
 		"serverClass" : "jupiter 01/18/2017 15:08" },
 	"instance" : {
-		"authenticator" : "jupiter 01/18/2017 15:08",
-		"authenticator:" : "jupiter 01/18/2017 15:08",
 		"bindingAddress" : "jupiter 01/18/2017 15:08",
 		"bindingAddress:" : "jupiter 01/18/2017 15:08",
 		"debugMode" : "jupiter 01/18/2017 15:08",
@@ -12,7 +10,6 @@
 		"delegate" : "jupiter 01/18/2017 15:08",
 		"delegate:" : "jupiter 01/18/2017 15:08",
 		"initialize" : "jupiter 01/18/2017 15:08",
-		"localUrl" : "jupiter 01/18/2017 15:08",
 		"log" : "jupiter 01/18/2017 15:08",
 		"log:" : "jupiter 01/18/2017 15:08",
 		"logDebug:" : "jupiter 01/18/2017 15:08",
@@ -32,13 +29,4 @@
 		"optionAt:put:" : "jupiter 01/18/2017 15:08",
 		"options" : "jupiter 01/18/2017 15:08",
 		"options:" : "jupiter 01/18/2017 15:08",
-		"reader" : "jupiter 01/18/2017 15:08",
-		"reader:" : "jupiter 01/18/2017 15:08",
-		"route" : "jupiter 01/18/2017 15:08",
-		"route:" : "jupiter 01/18/2017 15:08",
-		"scheme" : "jupiter 01/18/2017 15:08",
-		"serverUrl" : "jupiter 01/18/2017 15:08",
-		"serverUrl:" : "jupiter 01/18/2017 15:08",
-		"stop" : "jupiter 01/18/2017 15:08",
-		"useGzipCompressionAndChunking" : "jupiter 01/18/2017 15:08",
-		"useGzipCompressionAndChunking:" : "jupiter 01/18/2017 15:08" } }
+		"stop" : "jupiter 01/18/2017 15:08" } }

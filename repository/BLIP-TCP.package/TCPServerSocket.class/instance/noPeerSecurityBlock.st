@@ -1,6 +1,5 @@
 as yet unclassified
 noPeerSecurityBlock
-    "Answer a one argument Block that given a connected GsSocket will
-    answer true only if the peer is the very same machine."
+  "Allow connections only from the local host"
 
-    ^[ :connection | connection peerName = GsSocket getLocalHostName]
+  ^ [ :connection | connection peerName = GsSocket getLocalHostName ]

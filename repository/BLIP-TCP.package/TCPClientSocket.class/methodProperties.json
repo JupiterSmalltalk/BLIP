@@ -2,6 +2,9 @@
 	"class" : {
 		 },
 	"instance" : {
+		"defaultDelegate" : "jupiter 01/18/2017 16:18",
+		"delegate" : "jupiter 01/18/2017 16:17",
+		"delegate:" : "jupiter 01/18/2017 16:19",
 		"handleConnectedEvent" : "jupiter 2/1/2011 23:01",
 		"handleEvent" : "jupiter 2/1/2011 23:01",
 		"server:" : "jupiter 2/1/2011 23:01" } }

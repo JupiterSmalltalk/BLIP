@@ -6,11 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"server",
-		"state",
-		"delegate" ],
-	"name" : "TCPClientSocket",
+		 ],
+	"name" : "TCPAbstractDelegate",
 	"pools" : [
 		 ],
-	"super" : "TCPAbstractSocket",
+	"super" : "GRObject",
 	"type" : "normal" }
