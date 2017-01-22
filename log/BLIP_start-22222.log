@@ -1,0 +1,3 @@
+neither .topazini nor $HOME/.topazini were found
+GemStone signal handler: signal 15 (SIGTERM), received from process 10767 userId 501
+  si_code: 0 at 1484794692, unknown SI_

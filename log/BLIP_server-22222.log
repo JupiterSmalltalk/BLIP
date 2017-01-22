@@ -1,0 +1,169 @@
+ _____________________________________________________________________________
+|                             Configuration Files                             |
+|                                                                             |
+| System File: /opt/GsDevKit_home/server/stones/tools/extents/system.conf     |
+|                                                                             |
+| Executable File: /opt/GsDevKit_home/shared/downloads/products/GemStone64Bit3.3.3-i386.Darwin/seaside/etc/seaside30.conf
+|_____________________________________________________________________________|
+Reading config file /opt/GsDevKit_home/server/stones/tools/extents/system.conf
+Reading config file /opt/GsDevKit_home/shared/downloads/products/GemStone64Bit3.3.3-i386.Darwin/seaside/etc/seaside30.conf
+ _____________________________________________________________________________
+|               Gem Configuration Options for process id 10718                |
+|_____________________________________________________________________________|
+
+DUMP_OPTIONS = TRUE;
+GEM_GCI_LOG_ENABLED = FALSE;
+GEM_ABORT_MAX_CRS = 0;
+GEM_FREE_FRAME_CACHE_SIZE = -1;
+GEM_FREE_FRAME_LIMIT = -1;
+GEM_FREE_PAGEIDS_CACHE = 200;
+GEM_HALT_ON_ERROR = -1;
+GEM_KEEP_MIN_SOFTREFS = 0;
+GEM_MAX_SMALLTALK_STACK_DEPTH = 1000;
+GEM_NATIVE_CODE_ENABLED = 0;
+GEM_PRIVATE_PAGE_CACHE_KB = 960KB;
+GEM_PGSVR_COMPRESS_PAGE_TRANSFERS = FALSE;
+GEM_PGSVR_FREE_FRAME_CACHE_SIZE = -1;
+GEM_PGSVR_FREE_FRAME_LIMIT = -1;
+GEM_PGSVR_UPDATE_CACHE_ON_READ = FALSE;
+GEM_PGSVR_USE_SSL = FALSE;
+GEM_READ_AUTH_ERR_STUBS = FALSE;
+GEM_REPOSITORY_IN_MEMORY = FALSE;
+GEM_RPC_KEEPALIVE_INTERVAL = 0;
+GEM_RPCGCI_TIMEOUT = 0;
+GEM_RPC_USE_SSL = TRUE;
+GEM_SOFTREF_CLEANUP_PERCENT_MEM = 50;
+GEM_STATMONITOR_ARGS = "";
+GEM_STATMONITOR_MID_CACHE_ARGS = "";
+GEM_TEMPOBJ_AGGRESSIVE_STUBBING = TRUE;
+GEM_TEMPOBJ_CACHE_SIZE = 50000KB;
+GEM_TEMPOBJ_CONSECUTIVE_MARKSWEEP_LIMIT = 50;
+GEM_TEMPOBJ_MESPACE_SIZE = 0;
+GEM_TEMPOBJ_OOMSTATS_CSV = FALSE;
+GEM_TEMPOBJ_OOPMAP_SIZE = 0;
+GEM_TEMPOBJ_SCOPES_SIZE = 2000;
+GEM_TEMPOBJ_POMGEN_SIZE = 0;
+GEM_TEMPOBJ_POMGEN_PRUNE_ON_VOTE = 100;
+GEM_TEMPOBJ_POMGEN_SCAVENGE_INTERVAL = 1800;
+GEM_TEMPOBJ_START_ADDR not used on this platform
+LOG_WARNINGS = TRUE;
+SHR_NUM_FREE_FRAME_SERVERS = -1;
+SHR_PAGE_CACHE_LARGE_MEMORY_PAGE_POLICY not used on this platform
+SHR_PAGE_CACHE_LOCKED = FALSE;
+SHR_PAGE_CACHE_NUM_PROCS = 10233;
+SHR_PAGE_CACHE_NUM_SHARED_COUNTERS = 1900;
+SHR_PAGE_CACHE_PERMISSIONS = 660;
+SHR_PAGE_CACHE_SIZE_KB = 500000KB;
+SHR_TARGET_FREE_FRAME_COUNT = -1;
+SHR_WELL_KNOWN_PORT_NUMBER = 0;
+CONFIG_WARNINGS_FATAL = FALSE;
+(vmGc spaceSizes: eden init 2048K max 9344K , survivor init 448K max 1600K,
+ vmGc    old max 37440K, code max 10048K, perm max 5056K, pom 10 * 4224K = 42240K,
+ vmGc    remSet 1156K, meSpace max 51572K oopMapSize 262144  max footprint 164M)
+ _____________________________________________________________________________
+|             GemStone/S64 Object-Oriented Data Management System             |
+|                   Copyright (C) GemTalk Systems 1986-2016                   |
+|                            All rights reserved.                             |
+|                           Covered by U.S Patents:                           |
+|            6,256,637 Transactional virtual machine architecture             |
+|              6,360,219 Object queues with concurrent updating               |
+|                  6,567,905 Generational Garbage Collector.                  |
+| 6,681,226 Selective Pessimistic Locking for a Concurrently Updateable Database
++-----------------------------------------------------------------------------+
+|    PROGRAM: topaz, Linear GemStone Interface (Linked Session)               |
+|    VERSION: 3.3.3, Wed Nov 30 14:31:06 2016                                 |
+|      BUILD: gss64_3_3_x_branch-40760                                        |
+|  BUILT FOR: Darwin (Mac)                                                    |
+|       MODE: 64 bit                                                          |
+| RUNNING ON: 8-CPU ta-nation.net x86_64 (Darwin 16.3.0 ) 2700MHz MacBookPro10,1
+| 2048MB                                                                      |
+| PROCESS ID: 10718     DATE: 19/01/2017 13:57:02 AEDT                        |
+|   USER IDS: REAL=jupiter (501) EFFECTIVE=jupiter (501) LOGIN=jupiter (501)  |
++-----------------------------------------------------------------------------+
+| DATEFORMAT: %d/%m/%Y %H:%M:%S %Z                                            |
+|   GEMSTONE_NRS_ALL = #dir:$GEMSTONE_LOGDIR#log:%N%P.log#dir:/opt/GsDevKit_home/server/stones/tools/logs
+|_____________________________________________________________________________|
+topaz> 
+topaz> set user DataCurator pass swordfish gems tools
+topaz> 
+topaz> display oops
+topaz> iferror where
+topaz> 
+topaz> login
+[Info]: LNK client/gem GCI levels = 33002/33002
+--- 19/01/2017 13:57:02.941 AEDT Login
+[Info]: libssl-3.3.3-64.dylib: loaded
+[Info]: User ID: DataCurator
+[Info]: Repository: tools
+[Info]: Session ID: 7
+[Info]: GCI Client Host: <Linked>
+[Info]: Page server PID: -1
+[Info]: libicudata.54.1.dylib: loaded
+[Info]: libicuuc.54.1.dylib: loaded
+[Info]: libicui18n.54.1.dylib: loaded
+[19/01/2017 13:57:02.950 AEDT]
+  gci login: currSession 1  linked session 
+successful login
+ fileformat is now utf8
+sourcestringclass is now Unicode16 
+topaz 1> 
+topaz 1> run
+"record gems pid in the pid file"
+| file |
+(GsFile isServerDirectory: '/opt/git/JupiterSmalltalk/BLIP/run') ifFalse: [ ^nil ].
+file := GsFile openWriteOnServer: '/opt/git/JupiterSmalltalk/BLIP/run/BLIP_server-22222.pid'.
+file nextPutAll: (System gemVersionReport at: 'processId') printString.
+file cr.
+file close.
+%
+[359587585 sz:5 cls: 135169 GsFile] aGsFile
+topaz 1> 
+topaz 1> run
+| x |
+"set _cacheName: for Gem to get unique id in statmon output. see http://code.google.com/p/glassdb/issues/detail?id=132"
+System _cacheName: ((x := 'BLIP-BLIP-22222-' , (GsSession serialOfSession: System session) printString , '-' , System myUserProfile userId) copyFrom: 1 to: (x size min: 31)).
+%
+[76033 sz:19 cls: 789249 System class] System
+topaz 1> 
+topaz 1> run
+
+GsProcess usingNativeCode not
+  ifTrue: [
+    "Enable remote Breakpoing handling"
+    Breakpoint trappable: true.
+    GemToGemAnnouncement installStaticHandler.
+    System commitTransaction ifFalse: [ nil error: 'Could not commit for GemToGemSignaling' ]. 
+  ].
+
+System transactionMode: #manualBegin.
+
+Exception 
+  installStaticException: 
+    [:ex :cat :num :args |
+      "Run the abort in a lowPriority process, since we must acquire the
+       transactionMutex."
+      [
+        GRPlatform current transactionMutex 
+          critical: [ 
+            GRPlatform current doAbortTransaction ].
+        System enableSignaledAbortError.
+      ] forkAt: Processor lowestPriority.
+    ]
+  category: GemStoneError
+  number: 6009
+  subtype: nil.
+System enableSignaledAbortError.
+"This thread is needed to handle the SigAbort exception, when the primary
+ thread is blocked on an accept. Assuming default 60 second 
+ STN_GEM_ABORT_TIMEOUT, wake up at 30 second intervals."
+[ 
+  [ true ] whileTrue: [ (Delay forSeconds: 30) wait ].
+] forkAt: Processor lowestPriority.
+
+
+GsFile gciLogServer: 'BLIP Server started on port ', 22222 printString.
+
+BLIPRunServerGems startGemServerOn: 22222.
+"does not return"
+%
+BLIP Server started on port 22222

@@ -1,0 +1,87 @@
+#!/bin/bash
+#
+# runBLIPGems [start | stop | restart] <label> <serverClass> <delegateClass> "<port numbers>"
+# 
+#  launch a single gem using startBLIPServer (which controls which adaptor is run)
+#    the <label> is ued in log files and error messages
+#    the <port numbers> is a list of port numbers. A BLIP gem is launched for each port in list.
+#
+#    see BLIPRunServerGems for more details
+# 
+BLIPLabel="$2"
+BLIPServerClass="$3"
+BLIPDelegateClass="$4"
+PORTS="$5"
+
+topaz_start()
+{
+    echo "Starting BLIP Gems...."
+    for port in $PORTS; do
+        if [ -e $BLIP/run/${BLIPLabel}_server-${port}.pid ]; then
+            echo "PID file for topaz on port $port already exists (already running?), try using the stop command first."
+            continue
+        fi
+        echo "	Starting BLIP application${BLIPLabel} gem on port $port"
+        $BLIP/bin/startBLIPServer $BLIPServerClass $BLIPDelegateClass $port >& $BLIP/log/${BLIPLabel}_start-${port}.log &
+    done
+
+    if [ -e $BLIP/log/BLIP_maintenance.pid ]; then
+            echo "PID file for maintenance gem already exists (already running?), try using the stop command first."
+    else
+        echo "	Starting BLIP maintenance gem"
+        $BLIP/bin/startBLIPMaintenance >& $BLIP/log/BLIP_maintenance_start.log &
+    fi
+}
+
+topaz_stop()
+{
+    echo "Stopping BLIP Gems..."
+    for port in $PORTS; do
+        pidfile="$BLIP/run/${BLIPLabel}_server-${port}.pid"
+
+        if [ -e $pidfile ]; then
+            pid=`cat $pidfile`
+            echo "   Stopping ${BLIPLabel} on PID $pid running on port $port"
+            kill $pid
+            rm $pidfile
+        else
+            echo "   No PID file found for  ${BLIPLabel} on port $port, not running?"
+        fi
+    done
+
+    pidfile=$BLIP/run/BLIP_maintenance.pid
+
+    if [ -e $pidfile ]; then
+        pid=`cat $pidfile`
+        echo "   Stopping BLIP maintenance gem PID $pid"
+        kill $pid
+        rm $pidfile
+    else
+        echo "   No PID file for for the BLIP maintenance gem, not running?"
+    fi
+    sleep 2
+}
+
+topaz_restart()
+{
+    echo "Restarting BLIP Gems..."
+    topaz_stop
+    topaz_start
+}
+
+case "$1" in
+
+    start)
+           topaz_start 
+            ;;
+    restart)
+            topaz_restart
+            ;;
+    stop)
+            topaz_stop
+            ;;
+    *)
+            echo "Usage: runBLIPGems (start|stop|restart) <ServerName> <BLIPServerClass> <BLIPDelegateClass> \"<port numbers>\""
+            ;;
+esac
+

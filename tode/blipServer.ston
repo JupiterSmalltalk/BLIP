@@ -9,6 +9,8 @@ TDScriptLeafNode{#name:'blipServer',#contents:'[ :topez :objIn :tokens :command 
       #(\'breakpoints\' nil #\'required\').
       #(\'errorHandler\' nil #\'required\').
       #(\'register\' nil #\'required\').
+      #(\'protocol\' nil #\'required\').
+      #(\'delegate\' nil #\'required\').
       #(\'port\' nil #\'required\').
       #(\'start\' nil #\'none\').
       #(\'stop\' nil #\'none\').
@@ -25,10 +27,10 @@ TDScriptLeafNode{#name:'blipServer',#contents:'[ :topez :objIn :tokens :command 
         at: \'breakpoints\'
         ifPresent: [ :breakOption | 
           breakOption = \'set\'
-            ifTrue: [ WABasicDevelopment setBreakPoints ]
+            ifTrue: [ BLIPDevelopment setBreakPoints ]
             ifFalse: [ 
               breakOption = \'clear\'
-                ifTrue: [ WABasicDevelopment clearBreakPoints ]
+                ifTrue: [ BLIPDevelopment clearBreakPoints ]
                 ifFalse: [ self error: \'Unknown breakpoints option \' , breakOption printString ] ].
           handled := true ].
       opts
@@ -64,46 +66,59 @@ TDScriptLeafNode{#name:'blipServer',#contents:'[ :topez :objIn :tokens :command 
           handled := true ].
       opts
         at: \'register\'
-        ifPresent: [ :serverType | 
-          | serverClass ports |
-          serverType = \'zinc\'
-            ifTrue: [ serverClass := Smalltalk at: #\'WAGsZincAdaptor\' ]
-            ifFalse: [ 
-              serverType = \'zincstreaming\'
-                ifTrue: [ serverClass := Smalltalk at: #\'WAGsZincStreamingServerAdaptor\' ]
-                ifFalse: [ 
-                  serverType = \'fastcgi\'
-                    ifTrue: [ serverClass := Smalltalk at: #\'WAFastCGIAdaptor\' ]
-                    ifFalse: [ 
-                      serverType = \'swazoo\'
-                        ifTrue: [ serverClass := Smalltalk at: #\'WAGsSwazooAdaptor\' ] ] ] ].
-          serverClass
-            ifNil: [ nil error: \'No serverClass defined for service \' , serverType printString ].
+        ifPresent: [ :serverName | 
           opts
-            at: \'port\'
-            ifPresent: [ :port | ports := {(port asNumber)} ]
-            ifAbsent: [ ports := #(8383) ].
-          WAGemStoneRunSeasideGems default
-            name: serverType;
-            adaptorClass: serverClass;
-            ports: ports.
-          handled := true ].
+            at: \'protocol\'
+            ifPresent: [ :protocol | 
+              | serverClass delegateClass ports |
+              protocol asLowercase = \'blip\'
+                ifTrue: [ serverClass := Smalltalk at: #\'BLIPGemServer\' ]
+                ifFalse: [ 
+                  protocol asLowercase = \'websocket\'
+                    ifTrue: [ serverClass := Smalltalk at: #\'BLIPWebSocketGemServer\' ] ].
+              serverClass
+                ifNil: [ nil error: \'No serverClass defined for protocol \' , protocol printString ].
+              opts
+                at: \'port\'
+                ifPresent: [ :port | ports := (port substrings: $,) collect: [ :portString | portString asNumber ] ]
+                ifAbsent: [ 
+                  ports := protocol asLowercase = \'blip\'
+                    ifTrue: [ #(20302) ]
+                    ifFalse: [ 
+                      protocol asLowercase = \'websocket\'
+                        ifTrue: [ #(8080) ]
+                        ifFalse: [ nil error: \'No port defined for service\' ] ] ].
+              opts
+                at: \'delegate\'
+                ifPresent: [ :delegateType | 
+                  delegateClass := Smalltalk at: delegateType asSymbol.
+                  delegateClass
+                    ifNil: [ nil error: \'No delegate class found for  \' , delegateType printString ] ].
+              BLIPRunServerGems
+                registerServer:
+                  (BLIPRunServerGems new
+                    name: serverName;
+                    serverClass: serverClass;
+                    delegateClass: delegateClass;
+                    ports: ports;
+                    yourself).
+              handled := true ] ].
       opts
         at: \'start\'
-        ifPresent: [ :ignored | WAGemStoneRunSeasideGems startGems ]
+        ifPresent: [ :ignored | BLIPRunServerGems startGems ]
         ifAbsent: [ 
           opts
             at: \'restart\'
-            ifPresent: [ :ignored | WAGemStoneRunSeasideGems restartGems ]
+            ifPresent: [ :ignored | BLIPRunServerGems restartGems ]
             ifAbsent: [ 
               opts
                 at: \'stop\'
-                ifPresent: [ :ignored | WAGemStoneRunSeasideGems stopGems ]
+                ifPresent: [ :ignored | BLIPRunServerGems stopGems ]
                 ifAbsent: [ 
                   opts
                     at: \'debug\'
                     ifPresent: [ :debugPort | 
-                      WAGemStoneRunSeasideGems default adaptorClass
+                      BLIPRunServerGems default adaptorClass
                         stop;
                         startOn: debugPort asNumber ]
                     ifAbsent: [ 
@@ -113,9 +128,9 @@ TDScriptLeafNode{#name:'blipServer',#contents:'[ :topez :objIn :tokens :command 
       TDManPage
         viewManPage:
           \'NAME
-  seasideWebServer - start/stop/restart seaside web servers
+  blipServer - start/stop/restart BLIP servers
 SYNOPSIS
-  blipServer [-h|--help] [--register=blip|websocket] [--port=<port-number>]
+  blipServer [-h|--help] [--register=<serverName>] [--protocol=blip|websocket] [--port=<port-number>]
   blipServer [--start] [--stop] [--restart]
   blipServer [--debug=<port-number>]
   blipServer [--errorHandler=WARemoteDebuggingWalkbackErrorHandler|WAGemStoneProductionErrorHandler]
@@ -124,7 +139,7 @@ SYNOPSIS
 
 DESCRIPTION
   First register the type of BLIP server that you want to use along with a port
-  number (multiple port numbers not supported ...yet).
+  number(s)
 
   Then start/start/stop the BLIP server as desired.
 
@@ -145,7 +160,7 @@ EXAMPLES
   ./blipServer --start
   ./blipServer --stop
 
-  ./blipServer --debug=8181
+  ./blipServer --debug=20303
 
   ./blipServer --breakpoints=set
   ./blipServer --breakpoints=clear
@@ -153,4 +168,4 @@ EXAMPLES
   ./blipServer --errorHandler=WARemoteDebuggingWalkbackErrorHandler
   ./blipServer --errorHandler=WAGemStoneProductionErrorHandler
 \'
-        topez: topez ] ]',#creationTime:DateAndTime['2014-06-19T10:09:47.03463697433472-07:00'],#modificationTime:DateAndTime['2017-01-08T16:42:23.08956599235535-08:00']}
+        topez: topez ] ]',#creationTime:DateAndTime['2014-06-19T10:09:47.03463697433472-07:00'],#modificationTime:DateAndTime['2017-01-18T22:37:57.40060496330261-08:00']}

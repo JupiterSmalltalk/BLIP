@@ -1,0 +1,19 @@
+{
+	"category" : "BLIP-GemServer-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"Default",
+		"RegisteredServers" ],
+	"commentStamp" : "jupiter 01/18/2017 22:39",
+	"instvars" : [
+		"name",
+		"serverClass",
+		"adaptorClass",
+		"delegateClass",
+		"ports" ],
+	"name" : "BLIPRunServerGems",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

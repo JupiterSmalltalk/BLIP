@@ -5,23 +5,25 @@
 
 usage() {
   cat <<HELP
-USAGE: $(basename $0) [-h] <stone-name> [--help] [--register=blip|websocket] [--port=<port-number>] \
+USAGE: $(basename $0) [-h] <stone-name> [--help] [--register=<ServerName>] [--protocol=BLIP|WebSocket] [--delegate=<BLIPDelegateClass>] [--port=<port-number>] \
                       [--start] [--stop] [--restart]
-Register/start/stop/restart a BLIP server for GemStone/S.
+Register/start/stop/restart a BLIP server.
 
 OPTIONS
   -h show shell script usage
   --help                         show BLIP server tODE script help
-  --register=blip|websocket      choose type of BLIP server to register.
-  --port=<port-number>           define BLIP port. Defaults to port 20302 for blip and port 80 for websocket
-  --start                        start the registered BLIP server
-  --stop                         stop the registered BLIP server
-  --restart                      restart the registered BLIP server
+  --register=<ServerName>        choose a name for this BLIP server to use.
+  --protocol=BLIP|WebSocket      choose the protocol type for BLIP server to use.
+  --delegate=<BLIPDelegateClass> choose the delegate class for the BLIP server.
+  --port=<port-number>           define BLIP server port. Defaults to port 20302 for BLIP and port 80 for WebSocket
+  --start                        start the BLIP server
+  --stop                         stop the BLIP server
+  --restart                      restart the BLIP server
 
 EXAMPLES
   $(basename $0) -h
-  $(basename $0) blipServer --register=blip --port=20302
-  $(basename $0) blipServer --register=websocket --port=80
+  $(basename $0) blipServer --register=MyBLIPServer --protocol=BLIP --delegate=BLIPTestingDelegate --port=20302
+  $(basename $0) blipServer --register=MyBLIPWebSocketServer --protocol=WebSocket --delegate=BLIPTestingDelegate --port=80
   $(basename $0) blipServer --restart
   $(basename $0) blipServer --stop
 
