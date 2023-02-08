@@ -1,4 +1,3 @@
 constants-messageTypes
 kMessageTypes
-
-	^#(#LMTPRequest #LMTPResponse #LMTPError)
+  ^ #(#'BLIPRequest' #'BLIPResponse' #'BLIPError')
